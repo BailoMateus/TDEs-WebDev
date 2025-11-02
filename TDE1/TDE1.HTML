@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Funções em JavaScript</title>
+</head>
+<body>
+  <h1>Exemplo de Funções em JavaScript</h1>
+  <p>Abra o console do navegador (F12) para ver os resultados.</p>
+
+  <script>
+    function soma(a, b) {
+      return a + b;
+    }
+
+    function subtracao(a, b) {
+      return a - b;
+    }
+
+    function multiplicacao(a, b) {
+      return a * b;
+    }
+
+    function divisao(a, b) {
+      if (b === 0) {
+        return "Erro: divisão por zero!";
+      }
+      return a / b;
+    }
+
+    const calcularMedia = function (array) {
+      let soma = 0;
+      for (let num of array) soma += num;
+      return soma / array.length;
+    };
+
+    const filtrarPares = (array) => array.filter(num => num % 2 === 0);
+    const dobrarValores = (array) => array.map(num => num * 2);
+
+    function aplicarOperacao(array, callback) {
+      return callback(array);
+    }
+
+    const numeros = [2, 3, 4, 5, 6];
+
+    console.log("Soma:", soma(10, 5));
+    console.log("Subtração:", subtracao(10, 5));
+    console.log("Multiplicação:", multiplicacao(10, 5));
+    console.log("Divisão:", divisao(10, 5));
+
+    console.log("Array:", numeros);
+    console.log("Números pares:", filtrarPares(numeros));
+    console.log("Média:", calcularMedia(numeros));
+    console.log("Dobrar valores (callback):", aplicarOperacao(numeros, dobrarValores));
+  </script>
+</body>
+</html>
